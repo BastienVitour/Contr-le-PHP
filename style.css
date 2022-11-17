@@ -1,0 +1,77 @@
+#mainblock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    margin: auto;
+    border: 3px solid black;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+.grey {
+    background-color: rgb(192, 192, 192);
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 25px;
+    text-align: center;
+}
+
+img {
+    cursor: pointer;
+}
+
+button {
+    margin:25px 0px 25px 15px;
+    border-color: blue;
+    background-color: aliceblue;
+    border-radius: 3px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#add_author {
+    margin: 0px 0px 15px 0px;
+}
+
+.edit {
+    margin-right: 5px;
+}
+
+.error {
+    color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+#synopsis {
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+input {
+    padding: 10px 0px;
+    width: 300px;
+    word-wrap: break-word;
+}
+
+select {
+    padding: 10px 0px;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+#bouton {
+    display: flex;
+}
