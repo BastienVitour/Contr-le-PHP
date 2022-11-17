@@ -33,14 +33,15 @@ if (empty($_POST['date'])) {
 if (isset($_POST['submit'])) {
     if ($valid) {
 
-        $titre = $_POST['titre'];
-        $synopsis = $_POST['synopsis'];
-        $auteur = $_POST['auteur'];
+        $titre = addslashes($_POST['titre']);
+        $synopsis = addslashes($_POST['synopsis']);
+        $auteur = addslashes($_POST['auteur']);
         $date = $_POST['date'];
         $sql = "INSERT INTO livres (titre, synopsis, id_auteur, date_parution) 
                 VALUES ('$titre', '$synopsis', '$auteur', '$date')";
         //echo $sql;
-        $sql = $bdd->prepare($sql);
+        //$sql = addslashes($sql);
+        //$sql = $bdd->prepare($sql);
         $bdd->exec($sql);
 
         header('Location:list.php');

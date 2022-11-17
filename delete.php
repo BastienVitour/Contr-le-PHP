@@ -8,7 +8,9 @@ $liste->execute();
 $liste = $liste->fetch();
 
 if (isset($_POST['confirm'])) {
-    $bdd->exec("DELETE * FROM livres WHERE id = '$id_livre'");
+    $sql = "DELETE FROM `livres` WHERE `livres`.`id` = '$id_livre'";
+    $bdd->exec($sql);
+    header('Location:list.php');
 }
 
 //if (isset($_POST['cancel'])) {
@@ -30,7 +32,7 @@ if (isset($_POST['confirm'])) {
     <?php echo 'Êtes vous sûr de vouloir supprimer '.$liste['titre']. ' ?'; ?>
     <form method="post">
         <div id="bouton">
-            <input type="button" name="confirm" value="Oui">
+            <input type="submit" name="confirm" value="Oui">
             <a href="list.php"><input type="button" name="cancel" value="Non"></a>
         </div>
 

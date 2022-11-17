@@ -39,16 +39,16 @@ if (empty($_POST['date'])) {
 if (isset($_POST['submit'])) {
     if ($valid) {
 
-        $titre = $_POST['titre'];
-        $synopsis = $_POST['synopsis'];
-        $auteur = $_POST['auteur'];
+        $titre = addslashes($_POST['titre']);
+        $synopsis = addslashes($_POST['synopsis']);
+        $auteur = addslashes($_POST['auteur']);
         $date = $_POST['date'];
 
         //$bdd->exec("INSERT INTO livres (id, titre, synopsis, id_auteur, date_parution) 
         //            VALUES (NULL, '$titre', '$synopsis', '$auteur', '$date')");
 
         $sql = "UPDATE livres SET titre = '$titre', synopsis='$synopsis', id_auteur='$auteur', date_parution='$date' WHERE id = '$id_livre'";
-        $sql = $bdd->prepare($sql);
+        //$sql = $bdd->prepare($sql);
         $bdd->exec($sql);
 
         header('Location:list.php');
